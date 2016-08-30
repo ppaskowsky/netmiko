@@ -1,6 +1,11 @@
 from netmiko import ConnectHandler
+import getpass
 
-net_connect = ConnectHandler(device_type='juniper', ip='10.57.32.100', username='root', password='Juniper') 
+username = raw_input("Username: ")
+password = getpass.getpass("Password: ")
+
+
+net_connect = ConnectHandler(device_type='juniper', ip='10.57.32.100', username=username, password=password) 
 
 #enter config mode
 net_connect.config_mode()
